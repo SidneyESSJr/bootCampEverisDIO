@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ssjun"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-20 10:14:28 "/>
+        <attribute name="created" value="c3NqdW47REVTS1RPUC0yN0E5TDM5OzIwMjAtMTEtMjA7IjA5OjEwOjIyICI7MjczNA=="/>
+        <attribute name="edited" value="c3NqdW47REVTS1RPUC0yN0E5TDM5OzIwMjAtMTEtMjA7IjEwOjE0OjI4ICI7MjsyODQ1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="media, total" type="Real" array="False" size=""/>
+            <declare name="notas" type="Real" array="True" size="4"/>
+            <call expression="popularNotas(notas)"/>
+            <call expression="calcMedia(notas)"/>
+            <assign variable="media" expression="calcMedia(notas)"/>
+            <call expression="calcTotal(notas)"/>
+            <assign variable="total" expression="calcTotal(notas)"/>
+            <output expression="&quot;A media &#233;: &quot; &amp; media &amp; &quot; e o total &#233;: &quot; &amp; total" newline="True"/>
+        </body>
+    </function>
+    <function name="calcMedia" type="Real" variable="media">
+        <parameters>
+            <parameter name="notas" type="Real" array="True"/>
+        </parameters>
+        <body>
+            <declare name="media" type="Real" array="False" size=""/>
+            <assign variable="media" expression="(notas[0] + notas[1] + notas[2] + notas[3]) / 4"/>
+        </body>
+    </function>
+    <function name="calcTotal" type="Real" variable="total">
+        <parameters>
+            <parameter name="notas" type="Real" array="True"/>
+        </parameters>
+        <body>
+            <declare name="total" type="Real" array="False" size=""/>
+            <assign variable="total" expression="(notas[0] + notas[1] + notas[2] + notas[3])"/>
+        </body>
+    </function>
+    <function name="popularNotas" type="None" variable="notas[]">
+        <parameters>
+            <parameter name="notas" type="Real" array="True"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="3" direction="inc" step="1">
+                <input variable="notas[i]"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
